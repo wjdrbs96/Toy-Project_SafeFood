@@ -68,7 +68,6 @@
         </div>
     </nav>
 
-
     <div class="table-responsive">
         <h3>공지 수정</h3>
         <form action="http://localhost:8080/post/update?postId=${post.postId}" method="post">
