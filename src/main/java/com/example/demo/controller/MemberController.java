@@ -14,7 +14,7 @@ public class MemberController {
 
     @PostMapping("food/list")
     public String foodList() {
-
+        return "save";
     }
 
 
