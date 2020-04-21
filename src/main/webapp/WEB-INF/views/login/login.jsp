@@ -18,14 +18,14 @@
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
-    <link href="/res/application.css" rel="stylesheet">
+    <link href="/res/css/application.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="container text-center login-margin-top">
     <h1 style="color: #4B89DC;">SafeFood</h1>
     <hr/>
-    <form:form method="post">
+    <form:form action="http://localhost:8080/food/list" method="GET">
         <div class="form-group">
             <label>아이디</label>
             <input width="50px" class="form-control margin-auto login-input-width" type="text" name="loginId"
