@@ -13,4 +13,16 @@
         insert into post(content, memberId, createDateTime, updateTime, writer, title)
         values (#{content}, #{memberId}, #{createDateTime}, #{updateTime}, #{writer}, #{title})
     </insert>
+
+    <select id="findByPostId" resultType="Post">
+        select *
+        from post
+        where postId = #{postId};
+    </select>
+
+    <update id="postUpdate">
+        update Post
+        set title = #{title}, content = #{contents}
+        where postId = #{postId};
+    </update>
 </mapper>

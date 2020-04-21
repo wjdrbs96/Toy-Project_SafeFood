@@ -83,7 +83,7 @@
                     <tr>
                         <td>${n.postId}</td>
                         <td>
-                            <a href="${pageContext.request.contextPath}">${n.title}</a>
+                            <a href="http://localhost:8080/post/edit?postId=${n.postId}">${n.title}</a>
                         </td>
                         <td>${n.writer}</td>
                         <td>${n.createDateTime}</td>

@@ -54,4 +54,22 @@ public class PostController {
 
         return "redirect:/post/main";
     }
+
+    @GetMapping("post/edit")
+    public String postEdit(Model model,
+                           @RequestParam("postId") int postId) {
+
+        Post post = postMapper.findByPostId(postId);
+        model.addAttribute("post", post);
+        return "post/noticeEdit";
+    }
+
+    @PostMapping("post/update")
+    public String postUpdate(@RequestParam("title") String title,
+                             @RequestParam("contents") String contents,
+                             @RequestParam("postId") int postId) {
+
+        postMapper.postUpdate(title, contents, postId);
+        return "redirect:/post/main";
+    }
 }

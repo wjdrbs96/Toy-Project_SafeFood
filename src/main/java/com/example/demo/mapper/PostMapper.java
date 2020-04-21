@@ -8,4 +8,6 @@ import java.util.List;
 public interface PostMapper {
     List<Post> postAll();
     void postInsert(Post post);
+    Post findByPostId(int postId);
+    void postUpdate(String title, String contents, int postId);
 }
