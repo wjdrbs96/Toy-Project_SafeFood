@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,12 @@ public class MemberController {
         return "login/login";
     }
 
+
+    @PostMapping("login")
+    public String login(HttpSession session, String loginId, String password) {
+        session.setAttribute("loginId", loginId);
+        return "redirect:/food/list";
+    }
 
     @GetMapping("food/list")
     public String foodList(Model model) throws Exception {

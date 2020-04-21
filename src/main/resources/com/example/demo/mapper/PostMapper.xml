@@ -8,4 +8,9 @@
         select *
         from post;
     </select>
+
+    <insert id="postInsert">
+        insert into post(content, memberId, createDateTime, updateTime, writer, title)
+        values (#{content}, #{memberId}, #{createDateTime}, #{updateTime}, #{writer}, #{title})
+    </insert>
 </mapper>

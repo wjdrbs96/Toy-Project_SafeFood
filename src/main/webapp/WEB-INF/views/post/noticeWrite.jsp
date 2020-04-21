@@ -4,8 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>공지사항</title>
+    <title>구매 내역</title>
     <meta charset="UTF-8">
+
     <link rel="icon" href="${pageContext.request.contextPath}/res/img/ssafy.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -66,36 +67,29 @@
     </nav>
 
     <div class="table-responsive">
-        <h3>공지사항</h3>
-        <table class="table table-hover table-bordered">
-            <thead class="thead-light">
-            <tr>
-                <th class="notice-width">#</th>
-                <th>제목</th>
-                <th>글쓴이</th>
-                <th>작성시간</th>
-                <th>수정시간</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:if test="${not empty post}">
-                <c:forEach items="${post}" var="n" varStatus="status">
-                    <tr>
-                        <td>${n.postId}</td>
-                        <td>
-                            <a href="${pageContext.request.contextPath}">${n.title}</a>
-                        </td>
-                        <td>${n.writer}</td>
-                        <td>${n.createDateTime}</td>
-                        <td>${n.updateTime}</td>
-                    </tr>
-                </c:forEach>
-            </c:if>
-            </tbody>
-        </table>
-        <h3 style="text-align: right">
-            <a href="http://localhost:8080/post/write" class="btn btn-primary">글 쓰기</a>
-        </h3>
+        <h3>공지 사항</h3>
+        <form action="http://localhost:8080/post/write" method="post">
+            <input type="hidden" name="action" value="registerNotice">
+            <input type="hidden" name="writer" value="${sessionScope.userId}">
+
+            <table class="table table-hover table-bordered">
+                <thead class="thead-light">
+                <tr>
+                    <th class="notice-width">제목</th>
+                    <th><input class="form-control" type="text" name="title" style="width: 100%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="notice-width">내용</td>
+                    <td><textarea class="form-control" name="contents" style="width: 100%; height: 400px"></textarea>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div style="width: 100%; text-align:center"><button class="btn btn-primary" type="submit">등록</button></div>
+        </form>
     </div>
 </div>
 </body>

@@ -25,7 +25,7 @@
 <div class="container text-center login-margin-top">
     <h1 style="color: #4B89DC;">SafeFood</h1>
     <hr/>
-    <form:form action="http://localhost:8080/food/list" method="GET">
+    <form:form action="http://localhost:8080/login" method="POST">
         <div class="form-group">
             <label>아이디</label>
             <input width="50px" class="form-control margin-auto login-input-width" type="text" name="loginId"
