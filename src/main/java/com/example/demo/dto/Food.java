@@ -1,14 +1,18 @@
 package com.example.demo.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Food {
-    private int foodId;
-    private String foodName;
-    private String manufacturer;
-    private int amountPerServings;
-    private int amountPerCalorie;
+    private Object foodId;
+    private Object image;
+    private Object foodName;
+    private Object manufacturer;
+    private Object amountPerServings;
+    private Object amountPerCalorie;
+
 }
