@@ -75,6 +75,7 @@
                 <th>글쓴이</th>
                 <th>작성시간</th>
                 <th>수정시간</th>
+                <th>-</th>
             </tr>
             </thead>
             <tbody>
@@ -88,6 +89,9 @@
                         <td>${n.writer}</td>
                         <td>${n.createDateTime}</td>
                         <td>${n.updateTime}</td>
+                        <td>
+                            <a href="http://localhost:8080/post/delete?postId=${n.postId}"><button class="btn-sm btn-danger">삭제</button></a>
+                        </td>
                     </tr>
                 </c:forEach>
             </c:if>

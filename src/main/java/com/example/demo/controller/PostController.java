@@ -44,11 +44,9 @@ public class PostController {
                             @RequestParam("contents") String contents) {
 
         String loginId = (String)session.getAttribute("loginId");
-        System.out.println(loginId);
         Member member = memberMapper.findByLoginId(loginId);
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println(sdf.format(date));
         Post post = new Post(contents, member.getMemberId(), sdf.format(date), sdf.format(date), member.getNickName(), title);
         postMapper.postInsert(post);
 
@@ -70,6 +68,13 @@ public class PostController {
                              @RequestParam("postId") int postId) {
 
         postMapper.postUpdate(title, contents, postId);
+        return "redirect:/post/main";
+    }
+
+    @GetMapping("post/delete")
+    public String postDelete(@RequestParam("postId") int postId) {
+        postMapper.postDelete(postId);
+
         return "redirect:/post/main";
     }
 }

@@ -6,7 +6,8 @@
 <mapper namespace="com.example.demo.mapper.PostMapper">
     <select id="postAll" resultType="Post">
         select *
-        from post;
+        from post p
+        order by p.postId DESC;
     </select>
 
     <insert id="postInsert">
@@ -25,4 +26,9 @@
         set title = #{title}, content = #{contents}
         where postId = #{postId};
     </update>
+
+    <delete id="postDelete">
+        delete from post
+        where postId = #{postId};
+    </delete>
 </mapper>

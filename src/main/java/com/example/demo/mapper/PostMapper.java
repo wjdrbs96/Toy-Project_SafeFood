@@ -10,4 +10,5 @@ public interface PostMapper {
     void postInsert(Post post);
     Post findByPostId(int postId);
     void postUpdate(String title, String contents, int postId);
+    void postDelete(int postId);
 }
