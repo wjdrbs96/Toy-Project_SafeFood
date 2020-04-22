@@ -21,48 +21,48 @@
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/res/css/application.css" rel="stylesheet">
 </head>
-<body>
-<div class="container div-margin-bottom">
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
-        <img src="${pageContext.request.contextPath}/res/img/safefood.jpg" alt="SSAFY" style="width: 70px;">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <body>
+    <div class="container div-margin-bottom">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+            <img src="${pageContext.request.contextPath}/res/img/safefood.jpg" alt="SSAFY" style="width: 70px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/food/list">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/food/list">MyPage</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/post/main">공지사항</a>
-                </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:8080/food/list">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:8080/food/list">MyPage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:8080/post/main">공지사항</a>
+                    </li>
 
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Menu
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="">식품목록</a>
-                        <a class="dropdown-item" href="">섭취목록</a>
-                        <a class="dropdown-item" href="">회원명단</a>
-                    </div>
-                </li>
-            </ul>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="">식품목록</a>
+                            <a class="dropdown-item" href="">섭취목록</a>
+                            <a class="dropdown-item" href="">회원명단</a>
+                        </div>
+                    </li>
+                </ul>
 
-            <div class="float-right div-margin-top">
-                <h4> 님 "Hello, SSAFY!"</h4>
+                <div class="float-right div-margin-top">
+                    <h4> 님 "Hello, SSAFY!"</h4>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
     <div class="row text-center">
         <div class="col-6 div-margin-top">
@@ -70,10 +70,10 @@
                  class="product-detail-card text-center div-margin-bottom">
 
             <div class="margin-auto div-margin-top">
-                <a href="">
-                    <button type="button" class="btn btn-primary">EAT</button>
+                <a href="http://localhost:8080/food/add?foodId=${foodId}">
+                    <button type="button" class="btn btn-primary">담기</button>
                 </a>
-                <a href="">
+                <a href="http://localhost:8080/food/list">
                     <button type="button" class="btn btn-primary">식품 목록으로 돌아가기</button>
                 </a>
             </div>

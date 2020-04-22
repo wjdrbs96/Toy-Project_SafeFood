@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.io.FileReader;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -84,28 +82,5 @@ public class PostController {
         return "redirect:/post/main";
     }
 
-    @GetMapping("food/detail")
-    public String foodDetail(Model model,
-                             @RequestParam("code") int code) throws Exception{
-        String foodInfoUrl = "C:/JSON/foodInfo.json";
-        String foodNutUrl = "C:/JSON/foodNutritionInfo.json";
 
-        JSONParser parser = new JSONParser();
-        JSONObject jsonObject = (JSONObject)parser.parse(new FileReader(foodInfoUrl));
-        JSONObject jso = (JSONObject)parser.parse(new FileReader(foodNutUrl));
-
-        JSONObject jsonObject1 = (JSONObject)jsonObject.get("foods");
-        JSONArray jsonArray = (JSONArray)jsonObject1.get("food");
-        JSONObject jso1 = (JSONObject)jso.get("items");
-        JSONArray jsa1 = (JSONArray)jso1.get("item");
-
-
-        JSONObject jsonObject2 = (JSONObject)jsonArray.get(code);
-        JSONObject jso2 = (JSONObject)jsa1.get(code);
-        Food food = new Food(jsonObject2.get("name"), jsonObject2.get("image"), jsonObject2.get("maker"), jso2.get("SERVING_WT"), jso2.get("NUTR_CONT2"), jsonObject2.get("marterial"));
-
-        model.addAttribute("food", food);
-
-        return "food/foodDetail";
-    }
 }
