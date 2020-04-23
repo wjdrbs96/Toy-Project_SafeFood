@@ -49,7 +49,7 @@
                         Menu
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="">식품목록</a>
+                        <a class="dropdown-item" href="http://localhost:8080/eat/list">식품목록</a>
                         <a class="dropdown-item" href="">섭취목록</a>
                         <a class="dropdown-item" href="">회원명단</a>
                     </div>
