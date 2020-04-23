@@ -10,4 +10,5 @@ public interface FoodMapper {
 
     void insertFood(Food food);
     List<Food> allView();
+    void eatDelete(int foodId);
 }

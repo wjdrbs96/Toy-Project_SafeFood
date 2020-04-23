@@ -90,9 +90,7 @@
                         <td>${f.amountPerCalorie} kcal</td>
                         <td>-</td>
                         <td>
-                            <form action="" method="post">
-                                <button class="btn-sm btn-danger">삭제</button>
-                            </form>
+                            <a href="http://localhost:8080/eat/delete?foodId=${f.foodId}"><button class="btn-sm btn-danger">삭제</button></a>
                         </td>
                     </tr>
                 </c:forEach>

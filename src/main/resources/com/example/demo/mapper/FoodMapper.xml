@@ -13,4 +13,9 @@
         from food;
     </select>
 
+    <delete id="eatDelete">
+        delete from food
+        where foodId = #{foodId};
+    </delete>
+
 </mapper>

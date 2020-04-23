@@ -37,4 +37,13 @@ public class Food {
         this.amountPerCalorie = amountPerCalorie;
         this.material = material;
     }
+
+    public Food(int foodId, String foodName, String manufacturer, double amountPerServings, double amountPerCalorie, String material) {
+        this.foodId = foodId;
+        this.foodName = foodName;
+        this.manufacturer = manufacturer;
+        this.amountPerServings = amountPerServings;
+        this.amountPerCalorie = amountPerCalorie;
+        this.material = material;
+    }
 }

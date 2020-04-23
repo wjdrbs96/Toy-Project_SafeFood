@@ -106,7 +106,9 @@ public class FoodController {
         double serving_wt = Double.parseDouble(wt);
         String nut = jso2.get("NUTR_CONT2").toString();
         double nutrition = Double.parseDouble(nut);
-        Food food = new Food(jsonObject2.get("name").toString(), jsonObject2.get("maker").toString(), serving_wt, nutrition, jsonObject2.get("material").toString());
+        String code = jsonObject2.get("code").toString();
+        int codeId = Integer.parseInt(code);
+        Food food = new Food(codeId, jsonObject2.get("name").toString(), jsonObject2.get("maker").toString(), serving_wt, nutrition, jsonObject2.get("material").toString());
         foodMapper.insertFood(food);
 
         List<Food> orderList = foodMapper.allView();
@@ -117,6 +119,16 @@ public class FoodController {
 
     @GetMapping("eat/list")
     public String eatList(Model model) {
+        List<Food> orderList = foodMapper.allView();
+        model.addAttribute("orderList", orderList);
+        return "order/orderList";
+    }
+
+    @GetMapping("eat/delete")
+    public String eatListDelete(Model model,
+                                @RequestParam("foodId") int foodId) {
+
+        foodMapper.eatDelete(foodId);
         List<Food> orderList = foodMapper.allView();
         model.addAttribute("orderList", orderList);
         return "order/orderList";
