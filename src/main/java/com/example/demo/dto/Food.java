@@ -29,6 +29,7 @@ public class Food {
         this.amountPerCalorie = amountPerCalorie;
     }
 
+
     public Food(Object foodName, Object manufacturer, Object amountPerServings, Object amountPerCalorie, Object material) {
         this.foodName = foodName;
         this.manufacturer = manufacturer;

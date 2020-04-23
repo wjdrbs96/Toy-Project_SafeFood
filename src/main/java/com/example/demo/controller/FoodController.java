@@ -38,8 +38,9 @@ public class FoodController {
 
         JSONObject jsonObject2 = (JSONObject)jsonArray.get(code);
         JSONObject jso2 = (JSONObject)jsa1.get(code);
-        Food food = new Food(jsonObject2.get("name"), jsonObject2.get("image"), jsonObject2.get("maker"), jso2.get("SERVING_WT"), jso2.get("NUTR_CONT2"), jsonObject2.get("material"));
+        Food food = new Food(jsonObject2.get("name"), jsonObject2.get("maker"), jso2.get("SERVING_WT"), jso2.get("NUTR_CONT2"), jsonObject2.get("material"));
         model.addAttribute("foodId", jsonObject2.get("code"));
+        model.addAttribute("image", jsonObject2.get("image"));
         model.addAttribute("food", food);
 
         return "food/foodDetail";

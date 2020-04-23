@@ -66,7 +66,7 @@
 
     <div class="row text-center">
         <div class="col-6 div-margin-top">
-            <img src="${pageContext.request.contextPath}/res/${food.image}" alt="FOOD"
+            <img src="${pageContext.request.contextPath}/res/${image}" alt="FOOD"
                  class="product-detail-card text-center div-margin-bottom">
 
             <div class="margin-auto div-margin-top">
