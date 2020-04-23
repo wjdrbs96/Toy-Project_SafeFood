@@ -35,10 +35,14 @@ public class FoodController {
         JSONObject jso1 = (JSONObject)jso.get("items");
         JSONArray jsa1 = (JSONArray)jso1.get("item");
 
-
-        JSONObject jsonObject2 = (JSONObject)jsonArray.get(code);
-        JSONObject jso2 = (JSONObject)jsa1.get(code);
-        Food food = new Food(jsonObject2.get("name"), jsonObject2.get("maker"), jso2.get("SERVING_WT"), jso2.get("NUTR_CONT2"), jsonObject2.get("material"));
+        JSONObject jsonObject2 = (JSONObject)jsonArray.get(code - 1);
+        System.out.println(jsonObject2.toString());
+        JSONObject jso2 = (JSONObject)jsa1.get(code - 1);
+        String wt = jso2.get("SERVING_WT").toString();
+        double serving_wt = Double.parseDouble(wt);
+        String nut = jso2.get("NUTR_CONT2").toString();
+        double nutrition = Double.parseDouble(nut);
+        Food food = new Food(jsonObject2.get("name").toString(), jsonObject2.get("maker").toString(), serving_wt, nutrition, jsonObject2.get("material").toString());
         model.addAttribute("foodId", jsonObject2.get("code"));
         model.addAttribute("image", jsonObject2.get("image"));
         model.addAttribute("food", food);
@@ -65,7 +69,13 @@ public class FoodController {
         for (int i = 0; i < 9; ++i) {
             JSONObject jsonObject2 = (JSONObject)jsonArray.get(i);
             JSONObject jso2 = (JSONObject)jsa1.get(i);
-            Food food = new Food(jsonObject2.get("code"), jsonObject2.get("image"), jsonObject2.get("name"), jsonObject2.get("maker"), jso2.get("SERVING_WT"), jso2.get("NUTR_CONT2"));
+            String wt = jso2.get("SERVING_WT").toString();
+            double serving_wt = Double.parseDouble(wt);
+            String nut = jso2.get("NUTR_CONT2").toString();
+            double nutrition = Double.parseDouble(nut);
+            String code = jsonObject2.get("code").toString();
+            int foodId = Integer.parseInt(code);
+            Food food = new Food(foodId, jsonObject2.get("image"), jsonObject2.get("name").toString(), jsonObject2.get("maker").toString(), serving_wt, nutrition);
             list.add(food);
         }
 
@@ -92,12 +102,23 @@ public class FoodController {
 
         JSONObject jsonObject2 = (JSONObject) jsonArray.get(foodId);
         JSONObject jso2 = (JSONObject) jsa1.get(foodId);
-        Food food = new Food(jsonObject2.get("name"), jsonObject2.get("image"), jsonObject2.get("maker"), jso2.get("SERVING_WT"), jso2.get("NUTR_CONT2"), jsonObject2.get("material"));
+        String wt = jso2.get("SERVING_WT").toString();
+        double serving_wt = Double.parseDouble(wt);
+        String nut = jso2.get("NUTR_CONT2").toString();
+        double nutrition = Double.parseDouble(nut);
+        Food food = new Food(jsonObject2.get("name").toString(), jsonObject2.get("maker").toString(), serving_wt, nutrition, jsonObject2.get("material").toString());
         foodMapper.insertFood(food);
 
         List<Food> orderList = foodMapper.allView();
         model.addAttribute("orderList", orderList);
 
+        return "order/orderList";
+    }
+
+    @GetMapping("eat/list")
+    public String eatList(Model model) {
+        List<Food> orderList = foodMapper.allView();
+        model.addAttribute("orderList", orderList);
         return "order/orderList";
     }
 }

@@ -8,19 +8,19 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Food {
-    private Object foodId;
+    private int foodId;
     private Object image;
-    private Object foodName;
-    private Object manufacturer;
-    private Object amountPerServings;
-    private Object amountPerCalorie;
-    private Object material;
+    private String foodName;
+    private String manufacturer;
+    private double amountPerServings;
+    private double amountPerCalorie;
+    private String material;
 
     public Food() {
 
     }
 
-    public Food(Object foodId, Object image, Object foodName, Object manufacturer, Object amountPerServings, Object amountPerCalorie) {
+    public Food(int foodId, Object image, String foodName, String manufacturer, double amountPerServings, double amountPerCalorie) {
         this.foodId = foodId;
         this.image = image;
         this.foodName = foodName;
@@ -30,7 +30,7 @@ public class Food {
     }
 
 
-    public Food(Object foodName, Object manufacturer, Object amountPerServings, Object amountPerCalorie, Object material) {
+    public Food(String foodName, String manufacturer, double amountPerServings, double amountPerCalorie, String material) {
         this.foodName = foodName;
         this.manufacturer = manufacturer;
         this.amountPerServings = amountPerServings;

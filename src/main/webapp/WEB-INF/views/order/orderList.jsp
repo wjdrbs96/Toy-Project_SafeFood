@@ -75,7 +75,6 @@
                 <th>제조사</th>
                 <th>1회 제공량</th>
                 <th>칼로리</th>
-                <th>알러지주의</th>
                 <th>수량</th>
                 <th>-</th>
             </tr>
@@ -89,6 +88,7 @@
                         <td>${f.manufacturer}</td>
                         <td>${f.amountPerServings} g</td>
                         <td>${f.amountPerCalorie} kcal</td>
+                        <td>-</td>
                         <td>
                             <form action="" method="post">
                                 <button class="btn-sm btn-danger">삭제</button>
