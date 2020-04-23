@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>공지사항</title>
@@ -69,18 +71,19 @@
             <img src="${pageContext.request.contextPath}/res/${image}" alt="FOOD"
                  class="product-detail-card text-center div-margin-bottom">
 
-            <div class="margin-auto div-margin-top">
-                <a href="http://localhost:8080/food/add?foodId=${foodId}">
-                    <button type="button" class="btn btn-primary">담기</button>
-                </a>
+            <form:form action="http://localhost:8080/food/add" method="GET">
+                <input type="hidden" name="foodId" value="${foodId}">
+                <div class="form-group product-num-input-width">
+                    <input class="form-control text-center" id="number" name="number"
+                           placeholder="개수를 입력하세요.">
+                </div>
+                <button class="btn btn-success" type="submit">담기</button>
                 <a href="http://localhost:8080/food/list">
                     <button type="button" class="btn btn-primary">식품 목록으로 돌아가기</button>
                 </a>
-            </div>
+            </form:form>
             <div class="margin-auto div-margin-top">
-                <form action="" method="post">
-                    <button class="btn btn-danger" type="submit">식품 삭제</button>
-                </form>
+
             </div>
             <div>
                 <canvas id="myChart" width="300" height="300"></canvas>

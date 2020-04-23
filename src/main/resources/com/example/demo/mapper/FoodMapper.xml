@@ -4,8 +4,8 @@
 
 <mapper namespace="com.example.demo.mapper.FoodMapper">
     <insert id="insertFood">
-        insert into food(foodName, manufacturer, amountPerServings, amountPerCalorie, material)
-        values (#{foodName}, #{manufacturer}, #{amountPerServings}, #{amountPerCalorie}, #{material})
+        insert into food(foodName, manufacturer, amountPerServings, amountPerCalorie, material, count)
+        values (#{foodName}, #{manufacturer}, #{amountPerServings}, #{amountPerCalorie}, #{material}, #{count})
     </insert>
 
     <select id="allView" resultType="Food">

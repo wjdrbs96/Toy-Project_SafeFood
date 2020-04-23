@@ -36,7 +36,6 @@ public class FoodController {
         JSONArray jsa1 = (JSONArray)jso1.get("item");
 
         JSONObject jsonObject2 = (JSONObject)jsonArray.get(code - 1);
-        System.out.println(jsonObject2.toString());
         JSONObject jso2 = (JSONObject)jsa1.get(code - 1);
         String wt = jso2.get("SERVING_WT").toString();
         double serving_wt = Double.parseDouble(wt);
@@ -86,7 +85,9 @@ public class FoodController {
 
     @GetMapping("food/add")
     public String foodAdd(Model model,
-                          @RequestParam("foodId") int foodId) throws Exception {
+                          @RequestParam("foodId") int foodId,
+                          @RequestParam("number") int number) throws Exception {
+
         String foodInfoUrl = "C:/JSON/foodInfo.json";
         String foodNutUrl = "C:/JSON/foodNutritionInfo.json";
 
@@ -100,17 +101,16 @@ public class FoodController {
         JSONArray jsa1 = (JSONArray) jso1.get("item");
 
 
-        JSONObject jsonObject2 = (JSONObject) jsonArray.get(foodId);
-        JSONObject jso2 = (JSONObject) jsa1.get(foodId);
+        JSONObject jsonObject2 = (JSONObject) jsonArray.get(foodId - 1);
+        JSONObject jso2 = (JSONObject) jsa1.get(foodId - 1);
         String wt = jso2.get("SERVING_WT").toString();
         double serving_wt = Double.parseDouble(wt);
         String nut = jso2.get("NUTR_CONT2").toString();
         double nutrition = Double.parseDouble(nut);
         String code = jsonObject2.get("code").toString();
         int codeId = Integer.parseInt(code);
-        Food food = new Food(codeId, jsonObject2.get("name").toString(), jsonObject2.get("maker").toString(), serving_wt, nutrition, jsonObject2.get("material").toString());
+        Food food = new Food(codeId, jsonObject2.get("name").toString(), jsonObject2.get("maker").toString(), serving_wt, nutrition, jsonObject2.get("material").toString(), number);
         foodMapper.insertFood(food);
-
         List<Food> orderList = foodMapper.allView();
         model.addAttribute("orderList", orderList);
 

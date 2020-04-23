@@ -88,7 +88,7 @@
                         <td>${f.manufacturer}</td>
                         <td>${f.amountPerServings} g</td>
                         <td>${f.amountPerCalorie} kcal</td>
-                        <td>-</td>
+                        <td>${f.count}</td>
                         <td>
                             <a href="http://localhost:8080/eat/delete?foodId=${f.foodId}"><button class="btn-sm btn-danger">삭제</button></a>
                         </td>
