@@ -41,13 +41,12 @@
             <button style="background-color: #4B89DC;" type="submit" class="btn btn-warning">로그인</button>
         </div>
         <div class="div-margin-top">
-            <a href="/register" class="logo-color">회원가입</a>
+            <a href="http://localhost:8080/register" class="logo-color">회원가입</a>
         </div>
     </form:form>
 
     <hr/>
 
-    <%-- query string에 error가 포함되어 있으면 (예: guest/login?error) 로그인 실패를 출력 --%>
     <c:if test="${ param.error != null }">
         <div>로그인 실패</div>
     </c:if>

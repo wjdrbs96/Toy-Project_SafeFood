@@ -82,7 +82,7 @@
             <c:if test="${not empty post}">
                 <c:forEach items="${post}" var="n" varStatus="status">
                     <tr>
-                        <td>${n.postId}</td>
+                        <td>${status.count}</td>
                         <td>
                             <a href="http://localhost:8080/post/edit?postId=${n.postId}">${n.title}</a>
                         </td>
