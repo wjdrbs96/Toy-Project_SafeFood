@@ -72,7 +72,6 @@
                 <option value="code">식품코드</option>
                 <option value="name">식품명</option>
                 <option value="maker">제조사</option>
-                <option value="material">원재료</option>
             </select>
             <input class="form-control mr-sm-2" type="search" name="st" placeholder="Search" aria-label="Search">
 
