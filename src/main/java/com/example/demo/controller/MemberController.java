@@ -20,6 +20,12 @@ public class MemberController {
         return "redirect:/food/list";
     }
 
+    @GetMapping("logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/login";
+    }
+
 
 
 }

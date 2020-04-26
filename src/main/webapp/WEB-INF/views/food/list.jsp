@@ -34,10 +34,10 @@
                     <a class="nav-link" href="http://localhost:8080/food/list">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">MyPage</a>
+                    <a class="nav-link" href="http://localhost:8080/food/list">MyPage</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Logout</a>
+                    <a class="nav-link" href="http://localhost:8080/logout">Logout</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:8080/post/main">공지사항</a>
