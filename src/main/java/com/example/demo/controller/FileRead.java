@@ -3,13 +3,12 @@ package com.example.demo.controller;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileRead {
+
     public static List<JSONObject> fileReader(int code) throws Exception {
         List<JSONObject> list = new ArrayList<>();
 

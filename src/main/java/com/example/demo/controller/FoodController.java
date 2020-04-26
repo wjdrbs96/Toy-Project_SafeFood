@@ -21,7 +21,7 @@ public class FoodController {
     public String foodDetail(Model model,
                              @RequestParam("code") int code) throws Exception{
 
-        List<JSONObject> list = FileRead.fileReader(code);
+        List<JSONObject> list = codeSave.fileReader(code);
         String wt = list.get(1).get("SERVING_WT").toString();
         double serving_wt = Double.parseDouble(wt);
         String nut = list.get(1).get("NUTR_CONT2").toString();
@@ -36,7 +36,7 @@ public class FoodController {
 
     @GetMapping("food/list")
     public String foodList(Model model) throws Exception {
-        List<JSONArray> array = FileRead.findReaders();
+        List<JSONArray> array = codeSave.findReaders();
 
         List<Food> list = new ArrayList<>();
 
@@ -96,5 +96,12 @@ public class FoodController {
         List<Food> orderList = foodMapper.allView();
         model.addAttribute("orderList", orderList);
         return "order/orderList";
+    }
+
+    @GetMapping("food/search")
+    public String foodSearch(@RequestParam("sb") String select,
+                             @RequestParam("st") String keyword) {
+
+        return "d";
     }
 }

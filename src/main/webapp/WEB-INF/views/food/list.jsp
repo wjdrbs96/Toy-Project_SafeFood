@@ -63,7 +63,7 @@
     </nav>
     <!-- ./ 메뉴바 -->
     <hr>
-    <form class="form-inline my-2 my-lg-0" action="">
+    <form class="form-inline my-2 my-lg-0" action="http://localhost:8080/food/search">
         <input type="hidden" name="action" value="search">
 
         <div style="width: 100%; text-align:center">
