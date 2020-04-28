@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class DefaultFood {
     int foodId;
-    String name;
+    String foodName;
     double amountPerServings;
     String manufacturer;
     double amountPerCalorie;

@@ -87,7 +87,7 @@
                     <img src="${pageContext.request.contextPath}/res/${food.image}" alt="FOOD"
                          class="card-img-top" style="width: 70% !important;">
                     <div class="card-body">
-                        <h4 class="card-title">${food.manufacturer} / ${food.name}</h4>
+                        <h4 class="card-title">${food.manufacturer} / ${food.foodName}</h4>
                         <h5>1회 제공량: ${food.amountPerServings}g</h5>
                         <h5>칼로리: ${food.amountPerCalorie} kcal</h5>
                     </div>

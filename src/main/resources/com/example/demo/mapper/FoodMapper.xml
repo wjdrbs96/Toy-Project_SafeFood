@@ -30,4 +30,10 @@
         where name = #{foodName};
     </select>
 
+    <select id="findByMaker" resultType="DefaultFood">
+        select *
+        from foodAll
+        where manufacturer = #{makerName};
+    </select>
+
 </mapper>

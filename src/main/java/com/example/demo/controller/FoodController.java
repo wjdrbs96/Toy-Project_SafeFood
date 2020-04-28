@@ -102,10 +102,14 @@ public class FoodController {
     @GetMapping("food/search")
     public String foodSearch(@RequestParam("sb") String select,
                              @RequestParam("st") String keyword,
-                             Model model) throws Exception {
+                             Model model) {
 
 
-        if (select.equals("code")) {
+        if (select.equals("all")) {
+
+        }
+
+        else if (select.equals("code")) {
             int foodId = Integer.parseInt(keyword);
             DefaultFood defaultFood = foodMapper.findByFoodId(foodId);
             model.addAttribute("food", defaultFood);
@@ -114,7 +118,12 @@ public class FoodController {
         else if (select.equals("name")) {
             DefaultFood defaultFood = foodMapper.findByFoodName(keyword);
             model.addAttribute("food", defaultFood);
+        }
 
+        else {
+            List<DefaultFood> list = foodMapper.findByMaker(keyword);
+            model.addAttribute("lists", list);
+            return "food/list";
         }
 
         return "food/foodOne";

@@ -14,4 +14,5 @@ public interface FoodMapper {
     void eatDelete(int foodId);
     DefaultFood findByFoodId(int FoodId);
     DefaultFood findByFoodName(String foodName);
+    List<DefaultFood> findByMaker(String makerName);
 }
