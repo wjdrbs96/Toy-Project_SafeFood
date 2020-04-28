@@ -61,7 +61,7 @@
                 </ul>
 
                 <div class="float-right div-margin-top">
-                    <h4> 님 "Hello, SSAFY!"</h4>
+                    <h4> 님 "Hello, World!"</h4>
                 </div>
             </div>
         </nav>

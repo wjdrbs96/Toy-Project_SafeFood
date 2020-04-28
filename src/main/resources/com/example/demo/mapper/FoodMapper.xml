@@ -27,7 +27,7 @@
     <select id="findByFoodName" resultType="DefaultFood">
         select *
         from foodALl
-        where name = #{foodName};
+        where foodName like concat('%', #{foodName}, '%');
     </select>
 
     <select id="findByMaker" resultType="DefaultFood">

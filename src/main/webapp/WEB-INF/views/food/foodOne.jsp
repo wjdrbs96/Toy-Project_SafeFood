@@ -57,7 +57,7 @@
             </ul>
 
             <div class="float-right div-margin-top">
-                <h4> 님 "Hello, SSAFY!"</h4>
+                <h4> "Hello, World!"</h4>
             </div>
         </div>
     </nav>
@@ -79,20 +79,24 @@
         </div>
     </form>
     <hr>
+
     <div class="row text-center">
         <div class="col-sm">
-            <div class="card custom-card">
-                <a href="http://localhost:8080/food/detail?code=${food.foodId}"
-                   class="product-font-color">
-                    <img src="${pageContext.request.contextPath}/res/${food.image}" alt="FOOD"
-                         class="card-img-top" style="width: 70% !important;">
-                    <div class="card-body">
-                        <h4 class="card-title">${food.manufacturer} / ${food.foodName}</h4>
-                        <h5>1회 제공량: ${food.amountPerServings}g</h5>
-                        <h5>칼로리: ${food.amountPerCalorie} kcal</h5>
-                    </div>
-                </a>
-            </div>
+            <c:if test="${not empty food}">
+                <div class="card custom-card">
+                    <a href="http://localhost:8080/food/detail?code=${food.foodId}"
+                       class="product-font-color">
+                        <img src="${pageContext.request.contextPath}/res/${food.image}" alt="FOOD"
+                             class="card-img-top" style="width: 70% !important;">
+                        <div class="card-body">
+                            <h4 class="card-title">${food.manufacturer} / ${food.foodName}</h4>
+                            <h5>1회 제공량: ${food.amountPerServings}g</h5>
+                            <h5>칼로리: ${food.amountPerCalorie} kcal</h5>
+                        </div>
+                    </a>
+                </div>
+            </c:if>
+
         </div>
     </div>
 </div>
