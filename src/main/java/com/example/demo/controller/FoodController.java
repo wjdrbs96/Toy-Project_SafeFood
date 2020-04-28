@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.DefaultFood;
 import com.example.demo.dto.Food;
 import com.example.demo.mapper.FoodMapper;
 import org.json.simple.JSONArray;
@@ -40,7 +41,7 @@ public class FoodController {
 
         List<Food> list = new ArrayList<>();
 
-        for (int i = 0; i < 12; ++i) {
+        for (int i = 0; i < 18; ++i) {
             JSONObject jsonObject2 = (JSONObject)array.get(0).get(i);
             JSONObject jso2 = (JSONObject)array.get(1).get(i);
             String wt = jso2.get("SERVING_WT").toString();
@@ -100,8 +101,22 @@ public class FoodController {
 
     @GetMapping("food/search")
     public String foodSearch(@RequestParam("sb") String select,
-                             @RequestParam("st") String keyword) {
+                             @RequestParam("st") String keyword,
+                             Model model) throws Exception {
 
-        return "d";
+
+        if (select.equals("code")) {
+            int foodId = Integer.parseInt(keyword);
+            DefaultFood defaultFood = foodMapper.findByFoodId(foodId);
+            model.addAttribute("food", defaultFood);
+        }
+
+        else if (select.equals("name")) {
+            DefaultFood defaultFood = foodMapper.findByFoodName(keyword);
+            model.addAttribute("food", defaultFood);
+
+        }
+
+        return "food/foodOne";
     }
 }

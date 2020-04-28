@@ -3,6 +3,9 @@ package com.example.demo.controller;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.ui.Model;
+import sun.applet.Main;
+
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,16 +35,32 @@ public class codeSave {
         List<JSONObject> jsonObjects = new ArrayList<>();
         JSONObject jsonObject2 = (JSONObject)list.get(0).get(code - 1);
         JSONObject jso2 = (JSONObject)list.get(1).get(code - 1);
-
         jsonObjects.add(jsonObject2);
         jsonObjects.add(jso2);
 
         return jsonObjects;
     }
 
+    public static String fileReader(String name) throws Exception {
+        List<JSONArray> list = codeSaver();
+
+        for (int i = 0; i < 20; ++i) {
+            JSONObject jsonObject2 = (JSONObject)list.get(0).get(i - 1);
+
+            if (jsonObject2.get("name").toString().equals(name)) {
+                return jsonObject2.get("name").toString();
+            }
+        }
+
+        return null;
+    }
+
+
     public static List<JSONArray> findReaders() throws Exception{
         List<JSONArray> jsonObjects = codeSaver();
         return jsonObjects;
     }
+
+
 
 }

@@ -18,4 +18,16 @@
         where foodId = #{foodId};
     </delete>
 
+    <select id="findByFoodId" resultType="DefaultFood">
+        select *
+        from foodAll
+        where foodId = #{foodId};
+    </select>
+
+    <select id="findByFoodName" resultType="DefaultFood">
+        select *
+        from foodALl
+        where name = #{foodName};
+    </select>
+
 </mapper>
