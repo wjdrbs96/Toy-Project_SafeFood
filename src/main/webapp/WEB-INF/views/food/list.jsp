@@ -68,7 +68,6 @@
 
         <div style="width: 100%; text-align:center">
             <select name="sb" class="form-control mr-sm-2">
-                <option value="all">전체</option>
                 <option value="code">식품코드</option>
                 <option value="name">식품명</option>
                 <option value="maker">제조사</option>

@@ -105,11 +105,7 @@ public class FoodController {
                              Model model) {
 
 
-        if (select.equals("all")) {
-
-        }
-
-        else if (select.equals("code")) {
+        if (select.equals("code")) {
             int foodId = Integer.parseInt(keyword);
             DefaultFood defaultFood = foodMapper.findByFoodId(foodId);
             model.addAttribute("food", defaultFood);
