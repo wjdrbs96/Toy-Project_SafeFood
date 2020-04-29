@@ -10,7 +10,7 @@
 ---
 ![foodList1](./img/foodlist1.PNG)
 
-![foodList2](./img/foodlist1.PNG)
+![foodList2](./img/foodlist2.PNG)
 
 ![notice](./img/notice.PNG)
 
