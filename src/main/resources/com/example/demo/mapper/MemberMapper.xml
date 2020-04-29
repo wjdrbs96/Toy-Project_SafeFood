@@ -26,4 +26,10 @@
         from member
         where loginId = #{loginId};
     </select>
+
+    <select id="findPassword" resultType="String">
+        select password
+        from member
+        where loginId = #{loginId} and name = #{name}
+    </select>
 </mapper>

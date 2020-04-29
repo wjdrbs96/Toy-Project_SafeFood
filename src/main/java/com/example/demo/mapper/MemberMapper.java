@@ -9,4 +9,5 @@ public interface MemberMapper {
     void registerMember(Member member);
     String loginCheck(String loginId);
     int checkLoginId(String loginId);
+    String findPassword(String loginId, String name);
 }

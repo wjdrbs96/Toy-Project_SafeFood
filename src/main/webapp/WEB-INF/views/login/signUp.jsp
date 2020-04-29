@@ -95,8 +95,10 @@
 
         <hr>
         <div class="div-margin-bottom">
-            <button class="btn btn-primary" type="submit" onclick="validate();">저장</button>
+            <button class="btn btn-primary" type="submit">가입</button>
+            <a href="http://localhost:8080/login"><button class="btn btn-primary" type="button">처음으로</button></a>
         </div>
+
     </form>
 </div>
 </body>

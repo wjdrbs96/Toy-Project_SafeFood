@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -100,6 +102,22 @@ public class MemberController {
         }
 
         return "login/signUp";
+    }
+
+    @GetMapping("findPassword")
+    public String findPassword() {
+        return "login/findPassword";
+    }
+
+    @PostMapping("findPassword")
+    public String findPassword(Model model,
+                               @RequestParam("id") String id,
+                               @RequestParam("name") String name) {
+
+        String password = memberMapper.findPassword(id, name);
+        model.addAttribute("password", password);
+
+        return "login/yourPwHere";
     }
 
 

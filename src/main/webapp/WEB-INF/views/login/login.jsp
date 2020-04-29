@@ -42,7 +42,7 @@
         </div>
         <div class="div-margin-top">
             <a href="http://localhost:8080/register" class="logo-color btn btn-link">회원가입</a>
-            <a class="ssafy" href="">
+            <a class="ssafy" href="http://localhost:8080/findPassword">
                 <button class="btn btn-link" type="button">비밀번호 찾기</button>
             </a>
         </div>
