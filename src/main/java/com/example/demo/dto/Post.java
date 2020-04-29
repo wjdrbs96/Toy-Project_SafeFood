@@ -6,13 +6,13 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Post {
-    int postId;
-    String content;
-    int memberId;
-    String createDateTime;
-    String updateTime;
-    String writer;
-    String title;
+    private int postId;
+    private String content;
+    private int memberId;
+    private String createDateTime;
+    private String updateTime;
+    private String writer;
+    private String title;
 
     public Post() {
 

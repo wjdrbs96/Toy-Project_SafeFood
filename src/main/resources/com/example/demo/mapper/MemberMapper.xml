@@ -9,4 +9,15 @@
         from member
         where loginId = #{loginId}
     </select>
+
+    <insert id="registerMember">
+        insert into member (loginId, password, name, email, nickName)
+        values (#{loginId}, #{password}, #{name}, #{email}, #{nickName})
+    </insert>
+
+    <select id="loginCheck" resultType="String">
+        select password
+        from member
+        where loginId = #{loginId};
+    </select>
 </mapper>

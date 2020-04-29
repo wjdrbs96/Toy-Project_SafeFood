@@ -25,36 +25,33 @@
     <script src="${pageContext.request.contextPath}/res/js/login.js"></script>
 </head>
 <body>
-<div class="container text-center" style="margin-top: 8%;">
+<div class="container text-center" style="margin-top: 3%;">
     <h1 class="ssafy">회원가입</h1>
     <hr>
 
-    <form action="${pageContext.request.contextPath}/main.do" method="post">
+    <form action="http://localhost:8080/register" method="post">
         <input type="hidden" name="action" value="signUp">
 
         <div class="form-group">
             <label for="id">ID</label>
             <input class="form-control margin-auto login-input-width"
-                   type="text" id="id" name="id"
+                   type="text" id="id" name="loginId"
                    placeholder="ID를 입력하세요.">
 
-            <c:if test="${errorMessages.idError != null}">
-                <span class="error">${errorMessages.idError}</span>
+            <c:if test="${errorId != null}">
+                <span class="error">${errorId}</span>
             </c:if>
 
-            <c:if test="${errorMessages.idAlready != null}">
-                <span class="error">${errorMessages.idAlready}</span>
-            </c:if>
         </div>
 
         <div class="form-group">
             <label for="pw">PW</label>
             <input class="form-control margin-auto login-input-width"
-                   type="password" id="pw" name="pw"
+                   type="password" id="pw" name="password"
                    placeholder="Password를 입력하세요.">
 
-            <c:if test="${errorMessages.pwError != null}">
-                <span class="error">${errorMessages.pwError}</span>
+            <c:if test="${errorPw != null}">
+                <span class="error">${errorPw}</span>
             </c:if>
         </div>
 
@@ -64,17 +61,33 @@
                    type="text" id="name" name="name"
                    placeholder="이름을 입력하세요.">
 
-            <c:if test="${errorMessages.nameError != null}">
-                <span class="error">${errorMessages.nameError}</span>
+            <c:if test="${errorName != null}">
+                <span class="error">${errorName}</span>
             </c:if>
         </div>
 
-        <div>
-            <label>Allergy</label><br>
-            <c:forEach items="${allergies}" var="a">
-                <label><input type="checkbox" name="allergy[]" value="${a.name}"> ${a.name}</label>
-            </c:forEach>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control margin-auto login-input-width"
+                   type="email" id="email" name="email"
+                   placeholder="이메일을 입력하세요.">
+
+            <c:if test="${errorEmail != null}">
+                <span class="error">${errorEmail}</span>
+            </c:if>
         </div>
+
+        <div class="form-group">
+            <label for="name">nickName</label>
+            <input class="form-control margin-auto login-input-width"
+                   type="text" id="nickName" name="nickName"
+                   placeholder="닉네임을 입력하세요.">
+
+            <c:if test="${errorNickName != null}">
+                <span class="error">${errorNickName}</span>
+            </c:if>
+        </div>
+
 
         <hr>
         <div class="div-margin-bottom">

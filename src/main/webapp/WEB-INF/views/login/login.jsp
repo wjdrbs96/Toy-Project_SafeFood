@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Kakao IX - 로그인</title>
+    <title>SafeFood - 로그인</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -41,14 +41,17 @@
             <button style="background-color: #4B89DC;" type="submit" class="btn btn-warning">로그인</button>
         </div>
         <div class="div-margin-top">
-            <a href="http://localhost:8080/register" class="logo-color">회원가입</a>
+            <a href="http://localhost:8080/register" class="logo-color btn btn-link">회원가입</a>
+            <a class="ssafy" href="">
+                <button class="btn btn-link" type="button">비밀번호 찾기</button>
+            </a>
         </div>
     </form:form>
 
     <hr/>
 
-    <c:if test="${ param.error != null }">
-        <div>로그인 실패</div>
+    <c:if test="${ errorMsg != null }">
+        <div>삐빅 : ${errorMsg}</div>
     </c:if>
 </div>
 </body>

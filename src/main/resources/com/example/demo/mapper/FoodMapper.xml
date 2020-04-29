@@ -33,7 +33,7 @@
     <select id="findByMaker" resultType="DefaultFood">
         select *
         from foodAll
-        where manufacturer = #{makerName};
+        where manufacturer like concat('%', #{makerName}, '%');
     </select>
 
 </mapper>
