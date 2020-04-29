@@ -8,4 +8,5 @@ public interface MemberMapper {
     Member findByLoginId(String loginId);
     void registerMember(Member member);
     String loginCheck(String loginId);
+    int checkLoginId(String loginId);
 }

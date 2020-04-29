@@ -42,6 +42,9 @@
                 <span class="error">${errorId}</span>
             </c:if>
 
+            <c:if test="${loginIdError != null}">
+                <span class="error">${loginIdError}</span>
+            </c:if>
         </div>
 
         <div class="form-group">
@@ -64,6 +67,7 @@
             <c:if test="${errorName != null}">
                 <span class="error">${errorName}</span>
             </c:if>
+
         </div>
 
         <div class="form-group">

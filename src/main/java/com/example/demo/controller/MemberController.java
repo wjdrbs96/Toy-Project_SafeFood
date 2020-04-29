@@ -87,6 +87,14 @@ public class MemberController {
 
         }
         else {
+            String loginIdError = "";
+            int Id = memberMapper.checkLoginId(member.getLoginId());
+            if (Id > 0) {
+                loginIdError = "아이디가 중복됩니다";
+                model.addAttribute("loginIdError", loginIdError);
+                return "login/signUp";
+            }
+
             memberMapper.registerMember(member);
             return "login/login";
         }

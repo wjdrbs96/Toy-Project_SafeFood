@@ -20,4 +20,10 @@
         from member
         where loginId = #{loginId};
     </select>
+
+    <select id="checkLoginId" resultType="int">
+        select memberId
+        from member
+        where loginId = #{loginId};
+    </select>
 </mapper>
