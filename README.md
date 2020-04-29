@@ -12,6 +12,8 @@
 
 ![foodList2](./img/foodlist2.PNG)
 
+<br>
+
 ![notice](./img/notice.PNG)
 
 
